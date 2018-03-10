@@ -1,7 +1,7 @@
 this is a nodeJs app for student management using JSON object \n
 to run this app : \n
 	step1 : move to the application directory and => npm install \n
-	step2 : node bin/www (http://localhost:3000/)\n
+	step2 : node bin/www (http://localhost:3000/) 
 
 
 myJs.js file : all my js code \n
