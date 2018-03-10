@@ -85,8 +85,11 @@ function editeRow(index) {
                 $("#cin").val(studentObject.cin);
                 $("#email").val(studentObject.email);
                 $("#specialty").val(studentObject.specialty);
+                SelectSectors($("#specialty").val());
                 $("#sector").val(studentObject.sector);
                 document.getElementById("submit").innerHTML="Update";
+                var htmlll= '';
+                $("#pp").html(htmlll);
 }
 
 function prepareTableCell(index,firstName, lastName, cin, email, specialty,sector) {
@@ -111,15 +114,35 @@ function prepareTableCell(index,firstName, lastName, cin, email, specialty,secto
             }
  //check if cin or email of the new student already exist in localStorage
 function checkKey() {
+  if (localStorage.studentsInfo && localStorage['formInfo']) {
   LS=JSON.parse(localStorage['formInfo']);
   for (var i = 0; i < studentsArray.length; i++) {
     if(LS["cin"] === studentsArray[i].cin || LS["email"] === studentsArray[i].email){
       console.log("already exist");
+      var htmlll= '<p> Cin or Email already exist </p>';
+      $("#pp").html(htmlll);
       return true;
     }
   }
-  return false;
+ }
+ return false;
+}
 
+function checkKeyWithIndex(index){
+  if (localStorage.studentsInfo && localStorage['formInfo']) {
+  LS=JSON.parse(localStorage['formInfo']);
+  for (var i = 0; i < studentsArray.length; i++) {
+    if(i != index){
+    if(LS["cin"] === studentsArray[i].cin || LS["email"] === studentsArray[i].email){
+      console.log("already exist");
+     var htmlll= '<p> Cin or Email already exist </p>';
+     $("#pp").html(htmlll);
+      return true;
+    }
+  }
+ }
+ }
+ return false
 }
 
  function onAddStudent(){
@@ -136,7 +159,10 @@ function checkKey() {
                   studentsArray.push(studentObject);
                             }
                 }else{
+
+                  if(checkKeyWithIndex(selectedindex) === false){
                   studentsArray.splice(selectedindex,1,studentObject);
+                }
                 }
 
                 localStorage.studentsInfo = JSON.stringify(studentsArray);
@@ -182,6 +208,8 @@ jQuery(function($) {
      forms.find('input').keyup(function(e){
         datas[$(this).attr('id')] = $(this).val();
         localStorage.formInfo=JSON.stringify(datas);
+        var htmlll= '';
+        $("#pp").html(htmlll);
      });
    }
 
