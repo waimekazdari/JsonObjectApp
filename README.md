@@ -1,4 +1,4 @@
-this is a nodeJs app for student management using JSON object 
+this is a nodeJs app for student management using JSON object, localStorage
 
 to run this app : 
 
@@ -9,6 +9,6 @@ to run this app :
 
 myJs.js file : all my js code 
 
-student.ejs :  i use ejs instead of html page 
+student.ejs :  i used ejs instead of html page 
 
 to test this app online : https://json-object-app.herokuapp.com/
