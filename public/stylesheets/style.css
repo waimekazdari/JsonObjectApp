@@ -1,0 +1,61 @@
+
+            h1{
+
+             color: #003399;
+             text-align: center;
+            }
+      label{
+
+       color: #777;
+       width: 30%;
+       display: inline-block;
+
+      }
+
+      #container{
+
+       padding: 1px;
+       width: 90%;
+       margin: 0 auto;
+       margin-top: 1%;
+       margin-bottom: 1%;
+       background-color: white;
+      }
+
+   
+   label{
+    color: #002266;
+    font-size: 14px;
+   }
+
+  
+
+   .sampleBtn{
+      
+      padding: 10px;
+       background-color: #f1f1f1;
+       width: 20%;
+       height: 35px;
+       font-size: 16px;
+
+   }
+   .sampleBtn:hover{
+
+          color: white;
+          background-color: brown;
+          cursor: pointer;
+   }
+
+   #borderBlue{
+    background-color:#6666ff; 
+    border:2px double blue;
+    padding: 10px;
+   }
+
+   #bt{
+    width: 50px;
+   }
+
+   #tableStudent{
+    background-color:#e6e6ff 
+   }
